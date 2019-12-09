@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1575913037 source:c:\users\francesco\desktop\programmi\shiftingzero\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
