@@ -15,7 +15,7 @@ int main()
 {
     /*  Variables declaration.  */
     unsigned char _Matrix[10][10];
-    signed int i, j, k;
+    signed int i, j, k, w;
 
     //Filling all '.' characters in the matrix.
     for(i = 0; i < 10; i++){
@@ -35,5 +35,37 @@ int main()
 
     //This algorithm shifts the zero character in the matrix, position by position
     //and clear the input every time that the 'i' index increments, so every time that the row change.
+    k = w = 0;
+
+    while(k < 10){
+
+        //Printing the matrix.
+        for(i = 0; i < 10; i++){
+            for(j = 0; j < 10; j++){
+                if(_Matrix[i][j - 1] == '0'){
+                    _Matrix[i][j - 1] = '.';
+                }
+                printf("%c   ", _Matrix[i][j]);
+            }
+
+            printf("\n");
+            if(_Matrix[i - 1][j] == '0'){
+                _Matrix[i - 1][j] = '.';
+            }
+        }
+        Sleep(1000);
+        system("CLS");
+
+        if(w == 9){
+            w = 0;
+            k += 1;
+        }else{
+            w++;
+        }
+        _Matrix[k][w] = '0';
+    }
+
+    printf("\n\n\n");
+    printf("Goodbye!\nBy Weebli.\n\n");
     return 0;
 }
